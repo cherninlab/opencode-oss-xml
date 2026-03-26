@@ -1,5 +1,12 @@
 <div align="center">
-  <h1>OpenCode OSS XML</h1>
+  <br />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="opencode-wordmark-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="opencode-wordmark-light.svg">
+    <img alt="OpenCode" src="opencode-wordmark-light.svg" height="42">
+  </picture>
+  <br />
+  <h1>OSS XML</h1>
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
   [![Bun](https://img.shields.io/badge/Bun-%23000000.svg?style=flat&logo=bun&logoColor=white)](https://bun.sh)
