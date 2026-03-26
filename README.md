@@ -1,9 +1,9 @@
 <div align="center">
   <br />
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="opencode-wordmark-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="opencode-wordmark-light.svg">
-    <img alt="OpenCode" src="opencode-wordmark-light.svg" height="42">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/cherninlab/opencode-oss-xml/main/opencode-wordmark-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/cherninlab/opencode-oss-xml/main/opencode-wordmark-light.svg">
+    <img alt="OpenCode" src="https://raw.githubusercontent.com/cherninlab/opencode-oss-xml/main/opencode-wordmark-light.svg" height="42">
   </picture>
   <br />
   <h1>OSS XML</h1>
