@@ -52,7 +52,8 @@ jobs:
         run: |
           # Automatically map the package namespace for GPR dynamically
           bun -e "const pkg = require('./package.json'); pkg.name = '@cherninlab/opencode-oss-xml'; require('fs').writeFileSync('./package.json', JSON.stringify(pkg, null, 2))"
-          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
+          echo "@cherninlab:registry=https://npm.pkg.github.com/" > ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> ~/.npmrc
           bun x npm publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
