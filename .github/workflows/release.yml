@@ -1,0 +1,58 @@
+name: Release & Publish
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+  packages: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          release-type: node
+
+      # Run Quality Gates specifically for the Release Publish trigger
+      - name: Checkout Code
+        if: ${{ steps.release.outputs.release_created }}
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        if: ${{ steps.release.outputs.release_created }}
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install & Test Code
+        if: ${{ steps.release.outputs.release_created }}
+        run: |
+          bun install --frozen-lockfile
+          bun run lint
+          bun run test
+
+      # Publish strictly to NPM (Public Registry)
+      - name: Publish to NPM
+        if: ${{ steps.release.outputs.release_created }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          bun x npm publish --access public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # Publish to GitHub Package Registry (GPR)
+      - name: Publish to GitHub Packages
+        if: ${{ steps.release.outputs.release_created }}
+        run: |
+          # Automatically map the package namespace for GPR dynamically
+          bun -e "const pkg = require('./package.json'); pkg.name = '@cherninlab/opencode-oss-xml'; require('fs').writeFileSync('./package.json', JSON.stringify(pkg, null, 2))"
+          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" > ~/.npmrc
+          bun x npm publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
