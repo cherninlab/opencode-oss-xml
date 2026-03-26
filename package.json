@@ -1,0 +1,22 @@
+{
+	"name": "opencode-oss-xml",
+	"version": "1.0.0",
+	"description": "Use natively any open-source model in OpenCode by automatically fixing broken XML tool-calling formats.",
+	"main": "src/index.ts",
+	"bin": {
+		"opencode-oss-xml": "./src/cli.ts"
+	},
+	"scripts": {
+		"test": "bun test",
+		"lint": "biome check .",
+		"format": "biome format --write ."
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.9",
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"license": "MIT"
+}

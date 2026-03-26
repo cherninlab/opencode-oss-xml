@@ -1,0 +1,16 @@
+name: Feature Request
+description: Propose a new model format wrapper or improvement.
+title: "[FEATURE] "
+labels: ["enhancement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: "Tell us how we can make opencode-oss-xml better!"
+  - type: textarea
+    id: feature
+    attributes:
+      label: Feature Description
+      description: What do you want to see?
+    validations:
+      required: true
