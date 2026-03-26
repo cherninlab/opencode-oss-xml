@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/cherninlab/opencode-oss-xml/compare/v1.2.0...v1.3.0) (2026-03-26)
+
+
+### Features
+
+* implement official OpenCode wordmark logos with dynamic dark/light mode switching ([35a2840](https://github.com/cherninlab/opencode-oss-xml/commit/35a28403d305e8ecdc269725e66a4b98b9509ee5))
+
 ## [1.2.0](https://github.com/cherninlab/opencode-oss-xml/compare/v1.1.0...v1.2.0) (2026-03-26)
 
 
