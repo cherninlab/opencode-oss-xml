@@ -1,0 +1,32 @@
+name: Bug Report
+description: Create a report to help us improve the tool calling parser.
+title: "[BUG] "
+labels: ["bug"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for reporting a broken tool call format. This helps us expand the OpenCode OSS XML bridge!"
+  - type: input
+    id: model
+    attributes:
+      label: Which Model / API are you using?
+      description: e.g. Ollama (qwen2.5-coder), OpenRouter (kimi-k2), vLLM (hermes-3)
+      placeholder: Ollama / Qwen 2.5 Coder
+    validations:
+      required: true
+  - type: textarea
+    id: system_output
+    attributes:
+      label: Malformed Tool Output
+      description: Please paste exactly what the model generated that failed to execute.
+      placeholder: <execute>bash \n ls -la \n</execute>
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: How should this have been translated?
+    validations:
+      required: false
