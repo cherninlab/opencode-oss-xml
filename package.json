@@ -2,6 +2,20 @@
 	"name": "opencode-oss-xml",
 	"version": "1.1.0",
 	"description": "Use natively any open-source model in OpenCode by automatically fixing broken XML tool-calling formats.",
+	"keywords": [
+		"opencode",
+		"llm",
+		"ai",
+		"parser",
+		"tool-calling",
+		"xml",
+		"ollama",
+		"vllm",
+		"qwen",
+		"llama",
+		"hermes",
+		"open-source"
+	],
 	"main": "src/index.ts",
 	"bin": {
 		"opencode-oss-xml": "./src/cli.ts"
